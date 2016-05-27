@@ -21,6 +21,6 @@ class RedirectMiddleware
     {
         $response = $response->withStatus($this->statusCode);
         $response = $response->withHeader('Location', $this->location);
-        return $response;
+        return $next($request, $response);
     }
 }
