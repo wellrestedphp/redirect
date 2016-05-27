@@ -1,0 +1,26 @@
+<?php
+
+namespace WellRESTed\Redirect;
+
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+
+class RedirectMiddleware
+{
+    private $statusCode;
+    private $location;
+
+    /** @param $statusCode */
+    public function __construct($statusCode, $path)
+    {
+        $this->statusCode = $statusCode;
+        $this->location = $path;
+    }
+
+    public function __invoke(RequestInterface $request, ResponseInterface $response, $next)
+    {
+        $response = $response->withStatus($this->statusCode);
+        $response = $response->withHeader('Location', $this->location);
+        return $response;
+    }
+}

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0bb34cfcfba9e419e4ee77b903f7af6a",
-    "content-hash": "287a8a7ad8ee96077d979af3390006d2",
+    "hash": "7c9d2479d2a349a6ba2162bb325a38b0",
+    "content-hash": "73c927e420800d98de0af2dfc5149d6d",
     "packages": [
         {
             "name": "psr/http-message",
@@ -1200,6 +1200,53 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
+        },
+        {
+            "name": "wellrested/wellrested",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wellrestedphp/wellrested.git",
+                "reference": "6772bd1ae0ec682dcfd6e2c53a2499af79ec917f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wellrestedphp/wellrested/zipball/6772bd1ae0ec682dcfd6e2c53a2499af79ec917f",
+                "reference": "6772bd1ae0ec682dcfd6e2c53a2499af79ec917f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "psr/http-message": "~1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WellRESTed\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PJ Dietz",
+                    "email": "pjdietz@gmail.com"
+                }
+            ],
+            "description": "Simple PHP Library for RESTful APIs",
+            "homepage": "https://github.com/pjdietz/wellrested",
+            "keywords": [
+                "api",
+                "http",
+                "rest",
+                "restful"
+            ],
+            "time": "2016-05-22 16:44:40"
         }
     ],
     "aliases": [],
