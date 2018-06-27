@@ -3,27 +3,34 @@
 namespace WellRESTed\Redirect\Test;
 
 use PHPUnit\Framework\TestCase;
-use WellRESTed\Message\Request;
 use WellRESTed\Message\Response;
+use WellRESTed\Message\ServerRequest;
 use WellRESTed\Message\Uri;
 use WellRESTed\Redirect\RedirectMiddleware;
+use WellRESTed\Test\Doubles\NextDouble;
 
 class RedirectMiddlewareTest extends TestCase
 {
+    /** @var int */
+    private $statusCode = 302;
+    /** @var string */
+    private $location = '/';
+
     private $request;
     private $response;
     private $next;
 
     public function setUp()
     {
-        $this->request = (new Request())
+        $this->request = (new ServerRequest())
             ->withUri(new Uri('http://localhost/my/path'));
         $this->response = new Response();
-        $this->next = function ($rqst, $resp) { return $resp; };
+        $this->next = new NextDouble();
     }
 
-    private function dispatch($middleware)
+    private function dispatch()
     {
+        $middleware = new RedirectMiddleware($this->statusCode, $this->location);
         return $middleware($this->request, $this->response, $this->next);
     }
 
@@ -31,17 +38,13 @@ class RedirectMiddlewareTest extends TestCase
 
     public function testSetsResponseStatusCode()
     {
-        $statusCode = 302;
-        $middleware = new RedirectMiddleware($statusCode, '/');
-        $response = $this->dispatch($middleware);
-        $this->assertEquals($statusCode, $response->getStatusCode());
+        $response = $this->dispatch();
+        $this->assertEquals($this->statusCode, $response->getStatusCode());
     }
 
     public function testSetsLocation()
     {
-        $statusCode = 302;
-        $middleware = new RedirectMiddleware($statusCode, '/new/path');
-        $response = $this->dispatch($middleware);
-        $this->assertEquals('/new/path', $response->getHeaderLine('Location'));
+        $response = $this->dispatch();
+        $this->assertEquals($this->location, $response->getHeaderLine('Location'));
     }
 }

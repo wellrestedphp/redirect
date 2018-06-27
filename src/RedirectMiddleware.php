@@ -5,6 +5,7 @@ namespace WellRESTed\Redirect;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+/** @deprecated 1.1.0 We suggest using RedirectHandler */
 class RedirectMiddleware
 {
     private $statusCode;
