@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce0872775a99935ff697eaf75b888018",
+    "content-hash": "2e3b1a77b6e8201d057a16e106213ff3",
     "packages": [
         {
             "name": "psr/http-message",
@@ -1570,6 +1570,58 @@
             "time": "2018-01-29T19:49:41+00:00"
         },
         {
+            "name": "wellrested/test",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wellrestedphp/test.git",
+                "reference": "652f834222b341daf645995ee9af2f1a2ba2e14c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wellrestedphp/test/zipball/652f834222b341daf645995ee9af2f1a2ba2e14c",
+                "reference": "652f834222b341daf645995ee9af2f1a2ba2e14c",
+                "shasum": ""
+            },
+            "require": {
+                "phpunit/phpunit": "^7",
+                "wellrested/wellrested": "~3.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WellRESTed\\Test\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PJ Dietz",
+                    "email": "pjdietz@gmail.com"
+                }
+            ],
+            "description": "Test cases and doubles for use with WellRESTed",
+            "homepage": "https://www.wellrested.org",
+            "keywords": [
+                "Double",
+                "TDD",
+                "api",
+                "http",
+                "mock",
+                "psr-15",
+                "psr-7",
+                "psr7",
+                "rest",
+                "restful",
+                "test",
+                "unit"
+            ],
+            "time": "2018-05-25T14:20:02+00:00"
+        },
+        {
             "name": "wellrested/wellrested",
             "version": "v3.1.0",
             "source": {
@@ -1627,7 +1679,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.4.0"
+        "php": ">=7"
     },
     "platform-dev": []
 }

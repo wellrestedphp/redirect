@@ -1,7 +1,7 @@
 {
     "name": "wellrested/redirect",
-    "description": "PSR-7 middleware for simple redirects",
-    "keywords": ["rest", "restful", "api", "http", "redirect", "location", "psr7", "psr-7"],
+    "description": "PSR-15 middleware for simple redirects",
+    "keywords": ["rest", "restful", "api", "http", "redirect", "location", "psr7", "psr-7", "psr15", "psr-15"],
     "homepage": "https://www.wellrested.org",
     "license": "MIT",
     "type": "library",
@@ -12,12 +12,13 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
+        "php": ">=7",
         "psr/http-message": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7",
-        "wellrested/wellrested": "^3"
+        "wellrested/test": "^1",
+        "wellrested/wellrested": ">=3.1"
     },
     "autoload": {
         "psr-4": {
