@@ -2,13 +2,13 @@
 
 namespace WellRESTed\Redirect\Test;
 
+use PHPUnit\Framework\TestCase;
 use WellRESTed\Message\Request;
 use WellRESTed\Message\Response;
 use WellRESTed\Message\Uri;
 use WellRESTed\Redirect\RedirectMiddleware;
 
-/** @covers WellRESTed\Redirect\RedirectMiddleware */
-class RedirectMiddlewareTest extends \PHPUnit_Framework_TestCase
+class RedirectMiddlewareTest extends TestCase
 {
     private $request;
     private $response;
